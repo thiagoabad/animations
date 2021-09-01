@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="go-up.css">
+</head>
+<body>
+    <div class="content">
+        <div class="menu">
+            <div class="slashL"></div>
+            <div class="slashR"></div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.menu').addEventListener('mouseenter', change);
+        var running = false;
+        function change(){
+            if (!running) {
+                running = !running;
+                var slashL = document.getElementsByClassName("slashL")[0];
+                var slashR = document.getElementsByClassName("slashR")[0];
+                slashL.className = "slashL slash--L";
+                slashR.className = "slashR slash--R";
+                setTimeout(() => { 
+                    slashL.className = "slashL";
+                    slashR.className = "slashR";
+                    running = !running;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

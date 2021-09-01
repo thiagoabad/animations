@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="menu">
+            <div class="slash"></div>
+            <div class="slash"></div>
+            <div class="slash"></div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.menu').addEventListener('click', change);
+        var initial = true;
+        function change(){
+            var list = document.getElementsByClassName("slash");
+            for (let i = 0; i < list.length; i++) {
+                if (initial){
+                    list[i].className = "slash slash--" + (i+1);
+                } else {
+                    list[i].className = "slash slash--" + (i+1) + "B";
+                }
+            }
+            initial = !initial;
+        }
+    </script>
+</body>
+</html>
